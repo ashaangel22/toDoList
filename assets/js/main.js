@@ -28,83 +28,6 @@ function createToDoItem(toDoList, toDoValue) {
 
 }
 
-function buttons() {
-	var buttons = document.querySelector(".buttons");
-
-	var markAllButton = document.createElement("button");
-	    buttons.appendChild(markAllButton);
-	    markAllButton.innerHTML = "Mark all Completed";
-
-	var showHideButton = document.createElement("button");
-	    buttons.appendChild(showHideButton);
-	    showHideButton.innerHTML = "Hide Completed";
-
-	var deleteAllButton = document.createElement("button");
-	    buttons.appendChild(deleteAllButton);
-	    deleteAllButton.innerHTML = "Delete All Completed";
-
-	markAllButton.addEventListener("click", markAll);
-	showHideButton.addEventListener("click", showHide);
-	deleteAllButton.addEventListener("click", deleteAll);
-    
-    function markAll() {
-//        var allItems = document.getElementsByClassName("input");
-//        var checkboxes = document.getElementsByName('input');
-//        var listItem = this.parentElement;
-//        listItem.classList.toggle("done");
-        
-//        var checkedBox = document.getElementsByName('input');
-//        console.log("doneItems");
-//     
-//        var checkboxes = document.getElementsByName("checkedBox");
-//        for (var i = 0; i< checkboxes.length; i++) {
-//            checkboxes[i].checked = true;
-//            
-//        checkboxes[i].parentElement.classList.add("done");
-//        }
-        
-         var checkboxes = document.getElementsByName('input');
-             if (element.checked) {
-                 for (var i = 0; i < checkboxes.length; i++) {
-                     if (checkboxes[i].type == 'checkbox') {
-                         checkboxes[i].checked = true;
-                     }
-                 }
-             } else {
-                 for (var i = 0; i < checkboxes.length; i++) {
-                     console.log(i)
-                     if (checkboxes[i].type == 'checkbox') {
-                         checkboxes[i].checked = false;
-                     }
-                 }
-             }
-        
-    }
-
-    function showHide() {
-        var doneItems = document.getElementsByClassName("done");
-        var elem = showHideButton;
-
-        for(var i=0;i< doneItems.length;i++) {
-            doneItems[i].classList.toggle("hidden");
-            
-            if (elem.innerHTML=="Hide Completed") {
-                elem.innerHTML = "Show Completed"; } else { elem.innerHTML = "Hide Completed"; }
-            }
-        }
-        
-    
-
-    function deleteAll() {
-        var doneItems = document.getElementsByClassName("done");
-        console.log(doneItems);
-
-        for(var i=0;i< doneItems.length;i++) {
-            doneItems[i].parentNode.removeChild(doneItems[i]);
-        }
-    }
-}
-
 
 function done() {
 	var listItem = this.parentElement;
@@ -139,6 +62,62 @@ function toggleListVisibility(toDoList) {
 		listArea.classList.add("hidden");
 	}
 }
+
+function buttons() {
+	var buttons = document.querySelector(".buttons");
+
+	var markAllButton = document.createElement("button");
+	    buttons.appendChild(markAllButton);
+	    markAllButton.innerHTML = "Mark all Completed";
+
+	var showHideButton = document.createElement("button");
+	    buttons.appendChild(showHideButton);
+	    showHideButton.innerHTML = "Hide Completed";
+
+	var deleteAllButton = document.createElement("button");
+	    buttons.appendChild(deleteAllButton);
+	    deleteAllButton.innerHTML = "Delete All Completed";
+
+	markAllButton.addEventListener("click", markAll);
+	showHideButton.addEventListener("click", showHide);
+	deleteAllButton.addEventListener("click", deleteAll);
+    
+//    function markAll() {
+//        var checkboxes = document.getElementsByName("todo[]");
+//        var listItem = document.getElementsByName("todo-item");
+//	  
+//		for(var i=0; i<checkboxes.length; i++) {
+//			checkboxes[i].checked = true;
+//            listItem.classList.add("done");
+//		} 
+//    }
+
+    function showHide() {
+        var doneItems = document.getElementsByClassName("done");
+        var elem = showHideButton;
+
+        for(var i=0;i< doneItems.length;i++) {
+            doneItems[i].classList.toggle("hidden");
+            
+            if (elem.innerHTML=="Hide Completed") {
+                elem.innerHTML = "Show Completed"; } else { elem.innerHTML = "Hide Completed"; }
+            }
+        
+        }
+        
+    
+
+    function deleteAll() {
+        var doneItems = document.getElementsByClassName("done");
+        console.log(doneItems);
+
+        for(var i=0;i< doneItems.length;i++) {
+            doneItems[i].parentNode.removeChild(doneItems[i]);
+        }
+        
+    }
+}
+
 
 
 window.onload = function () {
