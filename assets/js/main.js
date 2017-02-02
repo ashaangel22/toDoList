@@ -82,15 +82,17 @@ function buttons() {
 	showHideButton.addEventListener("click", showHide);
 	deleteAllButton.addEventListener("click", deleteAll);
     
-//    function markAll() {
-//        var checkboxes = document.getElementsByName("todo[]");
-//        var listItem = document.getElementsByName("todo-item");
-//	  
-//		for(var i=0; i<checkboxes.length; i++) {
-//			checkboxes[i].checked = true;
-//            listItem.classList.add("done");
-//		} 
-//    }
+    function markAll() {
+        var checkboxes = document.getElementsByName("todo[]");
+        var listItem = document.getElementsByName("todo-item");
+	  
+		for(var i=0; i<checkboxes.length; i++) {
+			checkboxes[i].checked = true;
+            checkboxes[i].parentElement.classList.add("done");
+		} 
+        
+        updateCounter();
+    }
 
     function showHide() {
         var doneItems = document.getElementsByClassName("done");
@@ -103,18 +105,21 @@ function buttons() {
                 elem.innerHTML = "Show Completed"; } else { elem.innerHTML = "Hide Completed"; }
             }
         
+        updateCounter();
+        
         }
         
     
 
     function deleteAll() {
         var doneItems = document.getElementsByClassName("done");
-        console.log(doneItems);
-
-        for(var i=0;i< doneItems.length;i++) {
-            doneItems[i].parentNode.removeChild(doneItems[i]);
-        }
         
+        var i = doneItems.length;
+        while (i--) {
+            doneItems[i].parentNode.removeChild(doneItems[i]);
+        } 
+        
+        updateCounter();
     }
 }
 
