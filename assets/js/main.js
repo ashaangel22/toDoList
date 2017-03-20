@@ -145,6 +145,18 @@ window.onload = function () {
         }
         
         localStorage.setItem(inputValue, formInput);
+        
+        var JSONData = JSON.stringify(inputValue);
+	    localStorage.setItem(inputValue, JSONData);
+        var newData = JSON.parse(localStorage.getItem(inputValue));
+        console.log(newData);
+        
+//        for(var i =0; i < localStorage.length; i++){
+//            var JSONData = JSON.stringify(localStorage.key(i));
+//           console.log(localStorage.getItem(localStorage.key(i)));
+//        }
 
 	});
 }
+
+
