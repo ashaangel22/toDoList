@@ -8,6 +8,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="stylesheet" href="assets/css/reset.css">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
 	<style>
@@ -26,29 +28,39 @@
 		<section class="form-area content-box">
 			
 			<form>
-				<input type="text" name="item-input" id="item-input">
-				<button type="submit" name="submit">Submit</button>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <input type="text" name="item-input" id="item-input">
+                    <label for="item-input" data-error="character limit exceeded" data-success=":)">What needs to be done?</label>
+                </div>
+                <div class="center-align">
+                    <button class="btn waves-effect waves-light " type="submit" name="submit">Submit<i class="material-icons right">send</i></button>
+                </div>
 			</form>
-
-			<br>
-
-			<div class="buttons">
-			</div>
-
-			<br>
-
-			<div class="counter">
-				<p> 0/0 Completed </p>
-			</div>
 
 		</section>
 
 		<section class="list-area content-box hidden">
-		<ol class="todo-list">
-			
-		</ol>
-		</section>
+            
+            <div class="center-align">
+                <div class="buttons">
+                </div>
+            </div>
 
+			<br>
+            
+            <ul class="todo-list">
+            </ul>
+            
+            <div class="right-align">
+                <div class="counter">
+                    <p> 0/0 Completed </p>
+                </div>
+            </div>
+		</section>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 		<script src="assets/js/utilities.js"></script>
 		<script src="assets/js/main.js"></script>
 	</body>

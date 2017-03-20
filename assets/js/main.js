@@ -8,19 +8,29 @@ function createToDoItem(toDoList, toDoValue) {
 
 	var checkbox = document.createElement('input');
         checkbox.type = "checkbox";
-        checkbox.value = 1;
+        checkbox.id = "filled-in-box";
+        checkbox.classList.add("filled-in");
         checkbox.name = "todo[]";
-        
+    
+    var label = document.createElement("label");
+		label.classList.add("filled-in-box");
+		label.htmlFor = "checkbox";
+    
     toDoItem.appendChild(checkbox);
+    toDoItem.appendChild(label);
     toDoItem.appendChild(textContainer);
     textContainer.innerHTML = toDoValue;
 
-    var deleteButton = document.createElement("button");
-	    toDoItem.appendChild(deleteButton);
-	    deleteButton.innerHTML = "X";
+    var deleteButton = document.createElement("a");
+    deleteButton.classList.add("secondary-content", "delete-btn");
+    var deleteIcon = document.createElement("i");
+    deleteIcon.classList.add("material-icons");
+    
+    deleteIcon.innerHTML = "delete_forever";
+    toDoItem.appendChild(deleteButton);
+    deleteButton.appendChild(deleteIcon);
 
-
-	checkbox.addEventListener("click", done);
+	label.addEventListener("click", done);
 	deleteButton.addEventListener("click", deleteItem);
 
 	updateCounter();
@@ -146,16 +156,6 @@ window.onload = function () {
         
         localStorage.setItem(inputValue, formInput);
         
-        var JSONData = JSON.stringify(inputValue);
-	    localStorage.setItem(inputValue, JSONData);
-        var newData = JSON.parse(localStorage.getItem(inputValue));
-        console.log(newData);
-        
-//        for(var i =0; i < localStorage.length; i++){
-//            var JSONData = JSON.stringify(localStorage.key(i));
-//           console.log(localStorage.getItem(localStorage.key(i)));
-//        }
-
 	});
 }
 
