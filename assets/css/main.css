@@ -34,12 +34,14 @@ body {
   width: 60px; }
 
 h1 {
+  color: #26a69a;
   font-weight: 700;
-  font-size: 22pt;
+  font-size: 7vw;
   margin: 15px 0; }
 
 p {
   color: #777;
+  font-size: 3vw;
   line-height: 140%; }
 
 .todo-list span {
@@ -76,6 +78,13 @@ a:hover {
     transition-duration: .5s;
     transition-timing-function: ease-in-out;
     background: rgb(47, 183, 170);
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
 }
 
 /*# sourceMappingURL=main.css.map */
