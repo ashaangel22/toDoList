@@ -42,17 +42,16 @@ p {
   color: #777;
   line-height: 140%; }
 
-.todo-list {
-  list-style: decimal;
-  padding: 0 30px; }
+.todo-list span {
+  position: absolute;}
 
 .todo-list .todo-item {
-    padding: 10px 0; 
-    border-bottom: 1px solid grey;
-    border-top: 1px solid grey;
+    padding: 10px; 
 }
+/*
     .todo-list .todo-item:hover {
       background: pink; }
+*/
 
 button {
     padding: 10px;

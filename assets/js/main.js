@@ -42,6 +42,7 @@ function createToDoItem(toDoList, toDoValue) {
 function done() {
 	var listItem = this.parentElement;
 	listItem.classList.toggle("done");
+    checkbox.checked="checked";
 
 	updateCounter();
 }
